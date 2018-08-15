@@ -1,6 +1,9 @@
+
+
 var VideoPlayer = (props) => (
   <div className="video-player">
     <div className="embed-responsive embed-responsive-16by9">
+      {console.log('VideoPlayer',props)}
       <iframe className="embed-responsive-item" src={'https://www.youtube.com/embed/'+props.video.id.videoId} allowFullScreen></iframe>
     </div>
     <div className="video-player-details">
@@ -9,6 +12,32 @@ var VideoPlayer = (props) => (
     </div>
   </div>
 );
+
+/*class VideoPlayer extends React.Component {
+
+  handleVideoChange(e) {
+    this.props.onVideoChange(e.target.val)
+  }
+  render() {
+    return (
+    <div className="video-player">
+      <div className="embed-responsive embed-responsive-16by9">
+        <iframe className="embed-responsive-item" src={'https://www.youtube.com/embed/'+props.video.id.videoId} allowFullScreen></iframe>
+      </div>
+      <div className="video-player-details">
+        <h3>{props.video.snippet.title}</h3>
+        <div>{props.video.snippet.description}</div>
+      </div>
+    </div>
+    );
+  }
+}
+
+
+*/
+
+
+
 
 // PropTypes tell other developers what `props` a component expects
 // Warnings will be shown in the console when the defined rules are violated
